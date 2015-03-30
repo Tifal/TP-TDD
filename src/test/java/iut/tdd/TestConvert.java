@@ -111,8 +111,8 @@ public class TestConvert {
 	}
 
 	@Test
-	public void test_num2text_50() {
-		Assert.assertEquals("cinquante", myConvert.num2text("50"));
+	public void test_num2text_100() {
+		Assert.assertEquals("cent", myConvert.num2text("100"));
 	}
 
 	@Test
@@ -130,6 +130,10 @@ public class TestConvert {
 	@Test
 	public void test_num2text_nombrede70a79(){
 		Assert.assertEquals("soixante-douze",myConvert.num2text("72"));
+	}
+	@Test
+	public void test_num2text_nombrede80a99(){
+		Assert.assertEquals("quatre-vingt-dix-neuf",myConvert.num2text("99"));
 	}
 	
 	

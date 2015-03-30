@@ -27,13 +27,13 @@ public class Convert {
 		Map.put("40", "quarante");
 		Map.put("50", "cinquante");
 		Map.put("60", "soixante");
-		
+		Map.put("100", "cent");
 	}
 	
 	public static String num2text(String input) {
 		
 		int numb=Integer.parseInt(input);
-		if(numb<17||(numb%10==0&&numb<61)){
+		if(numb<17||(numb%10==0&&numb<101)){
 			return Map.get(input);
 		}
 		else if(numb>69&&numb<80){
@@ -47,6 +47,25 @@ public class Convert {
 		}
 		else if(numb>20&&numb-numb/10*10==1){
 			return Map.get(""+(numb/10)*10)+"-et-"+Map.get(""+(numb-(numb/10)*10));
+		}
+		else if(numb>79&&numb<100){
+			String nombreFini=Map.get(""+4)+"-"+Map.get(""+20);
+			if(numb==80){
+				return nombreFini;
+			}
+			else{
+				if(numb<90){
+					nombreFini+="-"+Map.get(""+(numb-(numb/10)*10));
+				}
+				else if(numb<99){
+					
+					nombreFini+="-"+Map.get(""+(numb-(numb/10*10)+10));
+				}
+				else{
+					nombreFini+="-"+Map.get("10")+"-"+Map.get("9");
+				}
+				return nombreFini;
+			}
 		}
 		else {
 			return Map.get(""+(numb/10)*10)+"-"+Map.get(""+(numb-(numb/10)*10));

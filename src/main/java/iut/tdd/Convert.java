@@ -27,21 +27,32 @@ public class Convert {
 		Map.put("40", "quarante");
 		Map.put("50", "cinquante");
 		Map.put("60", "soixante");
+		
 	}
 	
 	public static String num2text(String input) {
 		
 		int numb=Integer.parseInt(input);
-		if(numb<17){
+		if(numb<17||(numb%10==0&&numb<61)){
 			return Map.get(input);
-	}
-		else if(numb%10==0&&numb<61){
-			return Map.get(input);
+		}
+		else if(numb>69&&numb<80){
+			if(numb==71){
+			return Map.get(""+((numb/10*10)-10))+"-et-"+Map.get(""+(numb-(numb/10)*10+10));
+			}
+			else{
+				return Map.get(""+((numb/10*10)-10))+"-"+Map.get(""+(numb-(numb/10)*10+10));
+			
+			}
+		}
+		else if(numb>20&&numb-numb/10*10==1){
+			return Map.get(""+(numb/10)*10)+"-et-"+Map.get(""+(numb-(numb/10)*10));
 		}
 		else {
 			return Map.get(""+(numb/10)*10)+"-"+Map.get(""+(numb-(numb/10)*10));
 		}
 	}
+
 	public static String text2num(String input) {
 		return input;
 	}

@@ -120,9 +120,18 @@ public class TestConvert {
 		Assert.assertEquals("soixante", myConvert.num2text("60"));
 	}
 	@Test
-	public void test_num2text_nombreAvecTiret(){
-		Assert.assertEquals("soixante-deux", myConvert.num2text("62"));
+	public void test_num2text_nombreAvecTiretJusqua69(){
+		Assert.assertEquals("soixante-neuf", myConvert.num2text("69"));
 	}
+	@Test
+	public void test_num2text_nombreAvecEt(){
+		Assert.assertEquals("vingt-et-un", myConvert.num2text("21"));
+	}
+	@Test
+	public void test_num2text_nombrede70a79(){
+		Assert.assertEquals("soixante-douze",myConvert.num2text("72"));
+	}
+	
 	
 
 }

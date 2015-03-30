@@ -94,4 +94,35 @@ public class TestConvert {
 	public void test_num2text_16() {
 		Assert.assertEquals("seize", myConvert.num2text("16"));
 	}
+
+	@Test
+	public void test_num2text_20() {
+		Assert.assertEquals("vingt", myConvert.num2text("20"));
+	}
+
+	@Test
+	public void test_num2text_30() {
+		Assert.assertEquals("trente", myConvert.num2text("30"));
+	}
+
+	@Test
+	public void test_num2text_40() {
+		Assert.assertEquals("quarante", myConvert.num2text("40"));
+	}
+
+	@Test
+	public void test_num2text_50() {
+		Assert.assertEquals("cinquante", myConvert.num2text("50"));
+	}
+
+	@Test
+	public void test_num2text_60() {
+		Assert.assertEquals("soixante", myConvert.num2text("60"));
+	}
+	@Test
+	public void test_num2text_nombreAvecTiret(){
+		Assert.assertEquals("soixante-deux", myConvert.num2text("62"));
+	}
+	
+
 }
